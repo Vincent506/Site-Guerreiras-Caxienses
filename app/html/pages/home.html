@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <script src="[https://cdn.tailwindcss.com](https://cdn.tailwindcss.com)"></script>
+    <script src="[https://unpkg.com/lucide@latest](https://unpkg.com/lucide@latest)"></script>
+    <link rel="stylesheet" href="../estilos/style.css">
+</head>
+<body class="min-h-screen flex items-center justify-center p-4">
+    <div id="toast-container"></div>
+
+    <div class="w-full max-w-md bg-white rounded-2xl shadow-xl overflow-hidden p-8">
+        <div class="text-center mb-8">
+            <div class="bg-green-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                <i data-lucide="check-circle" class="text-green-600 w-10 h-10"></i>
+            </div>
+            <h2 class="text-2xl font-bold text-gray-800 mb-2">Sessão iniciada!</h2>
+            <p class="text-gray-600">Bem-vindo(a), <strong id="home-user-display"></strong>.</p>
+        </div>
+        <button onclick="logout()" class="w-full bg-gray-200 text-gray-800 py-2.5 rounded-lg font-semibold">Terminar Sessão</button>
+    </div>
+
+    <script src="../main.js"></script>
+</body>
+</html>
