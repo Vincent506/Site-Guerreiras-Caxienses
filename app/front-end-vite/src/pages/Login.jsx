@@ -1,16 +1,26 @@
 import { useState } from "react";
 import api from "../services/api";
 
+function sair() {
+
+  localStorage.removeItem(
+    "token"
+  );
+
+  window.location.reload();
+}
+
 export default function Login(){
 
   const [email,setEmail] = useState("");
   const [senha,setSenha] = useState("");
 
-  async function entrar(){
+  async function entrar() {
 
-    try{
+  try {
 
-      const response = await api.post(
+    const response =
+      await api.post(
         "/auth/login",
         {
           email,
@@ -18,15 +28,20 @@ export default function Login(){
         }
       );
 
-      localStorage.setItem(
-        "token",
-        response.data.token
-      );
+    localStorage.setItem(
+      "token",
+      response.data.token
+    );
 
-    }catch(err){
-      console.log(err);
-    }
+    window.location.reload();
+
+  } catch (err) {
+
+    alert("Login inválido");
+
+    console.error(err);
   }
+}
 
   return (
     <>
@@ -43,6 +58,9 @@ export default function Login(){
 
       <button onClick={entrar}>
         Entrar
+      </button>
+      <button onClick={sair}>
+        Sair
       </button>
     </>
   );

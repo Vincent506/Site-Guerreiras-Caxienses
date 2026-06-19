@@ -1,40 +1,21 @@
-import axios from 'axios';
-
-export default axios.create({
-  baseURL: "http//localhost:3000"
-})
-
-await api.post("/app/backend/src/models/User.js",{
-  nome,
-  email,
-  senha
-});
-
-await api.post("/app/backend/src/controllers/authController.js",{
-  email,
-  senha
-})
-
+import axios from "axios";
 
 const api = axios.create({
-  baseURL: "http://localhost:5173"
+  baseURL: "http://localhost:3000"
 });
 
-api.interceptors.request.use(req => {
+api.interceptors.request.use(config => {
 
-  console.log("REQUEST");
-  console.log(req.url);
-  console.log(req.data);
+  const token =
+    localStorage.getItem("token");
 
-  return req;
+  if (token) {
+
+    config.headers.Authorization =
+      `Bearer ${token}`;
+  }
+
+  return config;
 });
 
-api.interceptors.response.use(res => {
-
-  console.log("RESPONSE");
-  console.log(res.data);
-
-  return res;
-});
-
-export default api
+export default api;

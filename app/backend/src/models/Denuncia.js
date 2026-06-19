@@ -2,6 +2,7 @@ const { DataTypes } = require("sequelize");
 const sequelize = require("../conf/database");
 
 const Denuncia = sequelize.define("Denuncia", {
+
   titulo: {
     type: DataTypes.STRING,
     allowNull: false
@@ -23,9 +24,14 @@ const Denuncia = sequelize.define("Denuncia", {
   },
 
   status: {
-    type: DataTypes.STRING,
+    type: DataTypes.ENUM(
+      "aberta",
+      "em_analise",
+      "resolvida"
+    ),
     defaultValue: "aberta"
   }
+
 });
 
 module.exports = Denuncia;

@@ -4,6 +4,7 @@ const sequelize = require("./src/conf/database");
 const app = require("./src/app");
 
 require("./src/models/User");
+require("./src/models/Denuncia");
 
 async function start() {
   try {

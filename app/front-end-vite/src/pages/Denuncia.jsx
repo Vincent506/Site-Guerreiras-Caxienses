@@ -1,33 +1,71 @@
 import { useState } from "react";
 import api from "../services/api";
 
-export default function Denuncia(){
+export default function Denuncia() {
 
-  const [tipo,setTipo] = useState("");
-  const [descricao,setDescricao] = useState("");
+  const [titulo, setTitulo] = useState("");
+  const [descricao, setDescricao] = useState("");
+  const [local, setLocal] = useState("");
+  const [categoria, setCategoria] = useState("");
 
-  async function enviar(){
+  async function enviar() {
 
-    const resposta = await api.post(
-      "/denuncias",
-      {
-        tipo,
-        descricao
-      }
-    );
+    try {
 
-    console.log(resposta.data);
+      const resposta = await api.post(
+        "/denuncias",
+        {
+          titulo,
+          descricao,
+          local,
+          categoria
+        }
+      );
+
+      console.log(resposta.data);
+
+      alert("Denúncia enviada!");
+
+    } catch (err) {
+
+      console.error(err);
+
+      alert("Erro ao enviar denúncia");
+    }
   }
 
   return (
     <>
       <input
-        placeholder="Tipo"
-        onChange={(e)=>setTipo(e.target.value)}
+      value={titulo}
+        placeholder="Título"
+        onChange={(e) =>
+          setTitulo(e.target.value)
+        }
+      />
+
+      <input
+      value={local}
+        placeholder="Local"
+        onChange={(e) =>
+          setLocal(e.target.value)
+        }
+      />
+
+      <input
+      value={categoria}
+        placeholder="Categoria"
+        onChange={(e) =>
+          setCategoria(e.target.value)
+        }
       />
 
       <textarea
-        onChange={(e)=>setDescricao(e.target.value)}
+      value={descricao}
+        placeholder="Descrição"
+        onChange={(e) =>
+          setDescricao(e.target.value)
+        }
       />
 
       <button onClick={enviar}>
