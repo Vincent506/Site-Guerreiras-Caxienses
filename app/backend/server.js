@@ -1,24 +1,29 @@
 require("dotenv").config();
 
+const sequelize = require("./src/conf/database");
 const app = require("./src/app");
 
-const sequelize =
-require("./src/config/database");
+require("./src/models/User");
 
-sequelize.sync()
-.then(() => {
+async function start() {
+  try {
+    await sequelize.authenticate();
 
-  console.log("Banco conectado");
+    console.log("✅ Banco conectado");
 
-  app.listen(
-    process.env.PORT,
-    () => {
+    await sequelize.sync({
+      alter: true,
+    });
 
+    app.listen(process.env.PORT, () => {
       console.log(
-        `Servidor rodando na porta ${process.env.PORT}`
+        `🚀 API rodando em http://localhost:${process.env.PORT}`
       );
-    }
-  );
+    });
 
-})
-.catch(console.error);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+start();
