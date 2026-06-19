@@ -1,14 +1,25 @@
 const { DataTypes } = require("sequelize");
-const sequelize = require("../config/database");
+const sequelize = require("../conf/database");
 
 const Denuncia = sequelize.define("Denuncia", {
-
-  tipo: {
-    type: DataTypes.STRING
+  titulo: {
+    type: DataTypes.STRING,
+    allowNull: false
   },
 
   descricao: {
-    type: DataTypes.TEXT
+    type: DataTypes.TEXT,
+    allowNull: false
+  },
+
+  local: {
+    type: DataTypes.STRING,
+    allowNull: false
+  },
+
+  categoria: {
+    type: DataTypes.STRING,
+    allowNull: false
   },
 
   status: {
