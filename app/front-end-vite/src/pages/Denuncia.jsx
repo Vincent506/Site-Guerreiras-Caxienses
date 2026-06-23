@@ -2,7 +2,7 @@ import { useState } from "react";
 import api from "../services/api";
 
 export default function Denuncia() {
-
+  
   const [titulo, setTitulo] = useState("");
   const [descricao, setDescricao] = useState("");
   const [local, setLocal] = useState("");
@@ -34,43 +34,53 @@ export default function Denuncia() {
     }
   }
 
-  return (
-    <>
-      <input
+
+ return (
+
+  <div className="card">
+
+    <h1 className="title">
+      Nova Denúncia
+    </h1>
+
+    <input
+      className="input"
       value={titulo}
-        placeholder="Título"
-        onChange={(e) =>
-          setTitulo(e.target.value)
-        }
-      />
+      placeholder="Título"
+      onChange={(e)=>setTitulo(e.target.value)}
+    />
 
-      <input
+    <input
+      className="input"
       value={local}
-        placeholder="Local"
-        onChange={(e) =>
-          setLocal(e.target.value)
-        }
-      />
+      placeholder="Local"
+      onChange={(e)=>setLocal(e.target.value)}
+    />
 
-      <input
+    <input
+      className="input"
       value={categoria}
-        placeholder="Categoria"
-        onChange={(e) =>
-          setCategoria(e.target.value)
-        }
-      />
+      placeholder="Categoria"
+      onChange={(e)=>setCategoria(e.target.value)}
+    />
 
-      <textarea
+    <textarea
+      className="textarea"
       value={descricao}
-        placeholder="Descrição"
-        onChange={(e) =>
-          setDescricao(e.target.value)
-        }
-      />
+      placeholder="Descrição"
+      onChange={(e)=>setDescricao(e.target.value)}
+    />
 
-      <button onClick={enviar}>
-        Enviar denúncia
-      </button>
-    </>
-  );
+    <br />
+    <br />
+
+    <button
+      className="btn"
+      onClick={enviar}
+    >
+      Enviar denúncia
+    </button>
+
+  </div>
+);
 }

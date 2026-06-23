@@ -1,0 +1,88 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  background:#f5f7fb;
+  min-height:100vh;
+}
+
+.container{
+  max-width:1000px;
+  margin:auto;
+  padding:30px;
+}
+
+.card{
+  background:white;
+  padding:24px;
+  border-radius:16px;
+  box-shadow:0 4px 12px rgba(0,0,0,.08);
+}
+
+.title{
+  font-size:2rem;
+  margin-bottom:20px;
+  color:#6b21a8;
+}
+
+.input{
+  width:100%;
+  padding:12px;
+  margin-top:10px;
+  margin-bottom:15px;
+  border:1px solid #ddd;
+  border-radius:8px;
+}
+
+.textarea{
+  width:100%;
+  min-height:120px;
+  padding:12px;
+  border:1px solid #ddd;
+  border-radius:8px;
+}
+
+.btn{
+  background:#7c3aed;
+  color:white;
+  border:none;
+  padding:12px 20px;
+  border-radius:8px;
+  cursor:pointer;
+}
+
+.btn:hover{
+  background:#6d28d9;
+}
+
+.nav{
+  display:flex;
+  gap:10px;
+  margin-bottom:20px;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(280px,1fr));
+  gap:20px;
+}
+
+.denuncia-card{
+  background:white;
+  border-radius:12px;
+  padding:20px;
+  box-shadow:0 2px 8px rgba(0,0,0,.1);
+}
+
+.badge{
+  display:inline-block;
+  margin-top:10px;
+  padding:4px 10px;
+  border-radius:20px;
+  background:#ede9fe;
+  color:#6d28d9;
+}

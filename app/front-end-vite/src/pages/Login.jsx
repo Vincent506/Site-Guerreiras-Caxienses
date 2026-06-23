@@ -43,25 +43,34 @@ export default function Login(){
   }
 }
 
-  return (
-    <>
-      <input
-        placeholder="Email"
-        onChange={(e)=>setEmail(e.target.value)}
-      />
+    return (
 
-      <input
-        type="password"
-        placeholder="Senha"
-        onChange={(e)=>setSenha(e.target.value)}
-      />
+  <div className="card">
 
-      <button onClick={entrar}>
+    <h1 className="title">
+      Guerreiras Caxienses
+    </h1>
+
+    <input
+      className="input"
+      placeholder="Email"
+      onChange={(e)=>setEmail(e.target.value)}
+    />
+
+    <input
+      className="input"
+      type="password"
+      placeholder="Senha"
+      onChange={(e)=>setSenha(e.target.value)}
+    />
+
+    <button
+      className="btn"
+      onClick={entrar}
+    >
         Entrar
       </button>
-      <button onClick={sair}>
-        Sair
-      </button>
-    </>
+
+    </div>
   );
 }

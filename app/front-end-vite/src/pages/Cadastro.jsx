@@ -35,45 +35,42 @@ export default function Cadastro() {
   }
 
   return (
-    <div>
 
-      <h2>Cadastro</h2>
+  <div className="card">
 
-      <input
-        value={nome}
-        placeholder="Nome"
-        onChange={(e) =>
-          setNome(e.target.value)
-        }
-      />
+    <h1 className="title">
+      Criar Conta
+    </h1>
 
-      <br />
+    <input
+      className="input"
+      value={nome}
+      placeholder="Nome"
+      onChange={(e)=>setNome(e.target.value)}
+    />
 
-      <input
-        value={email}
-        placeholder="Email"
-        onChange={(e) =>
-          setEmail(e.target.value)
-        }
-      />
+    <input
+      className="input"
+      value={email}
+      placeholder="Email"
+      onChange={(e)=>setEmail(e.target.value)}
+    />
 
-      <br />
+    <input
+      className="input"
+      type="password"
+      value={senha}
+      placeholder="Senha"
+      onChange={(e)=>setSenha(e.target.value)}
+    />
 
-      <input
-        type="password"
-        value={senha}
-        placeholder="Senha"
-        onChange={(e) =>
-          setSenha(e.target.value)
-        }
-      />
+    <button
+      className="btn"
+      onClick={cadastrar}
+    >
+      Cadastrar
+    </button>
 
-      <br />
-
-      <button onClick={cadastrar}>
-        Cadastrar
-      </button>
-
-    </div>
-  );
+  </div>
+);
 }

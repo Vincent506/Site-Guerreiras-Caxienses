@@ -3,43 +3,73 @@ import { useState } from "react";
 import Login from "./pages/Login";
 import Cadastro from "./pages/Cadastro";
 import Denuncia from "./pages/Denuncia";
+import ListaDenuncias from "./pages/listaDenuncias";
 
 function App() {
 
-  const [tela, setTela] =
-    useState("login");
+  const [tela,setTela] = useState("login");
 
   const token =
     localStorage.getItem("token");
 
-  if (token) {
+  if(token){
 
-    return <Denuncia />;
+    return (
+
+      <div className="container">
+
+        <div className="nav">
+
+          <button
+            className="btn"
+            onClick={() => setTela("denuncia")}
+          >
+            Nova Denúncia
+          </button>
+
+          <button
+            className="btn"
+            onClick={() => setTela("lista")}
+          >
+            Ver Denúncias
+          </button>
+
+        </div>
+
+        {
+          tela === "lista"
+          ? <ListaDenuncias />
+          : <Denuncia />
+        }
+
+      </div>
+    );
   }
 
   return (
 
-    <div>
+    <div className="container">
 
-      <button
-        onClick={() =>
-          setTela("login")
-        }
-      >
-        Login
-      </button>
+      <div className="nav">
 
-      <button
-        onClick={() =>
-          setTela("cadastro")
-        }
-      >
-        Cadastro
-      </button>
+        <button
+          className="btn"
+          onClick={() => setTela("login")}
+        >
+          Login
+        </button>
 
-      <hr />
+        <button
+          className="btn"
+          onClick={() => setTela("cadastro")}
+        >
+          Cadastro
+        </button>
 
-      {tela === "login"
+      </div>
+
+      {
+        tela === "login"
         ? <Login />
         : <Cadastro />
       }

@@ -23,30 +23,49 @@ export default function ListaDenuncias() {
       response.data
     );
   }
+return (
 
-  return (
-    <div>
+  <div>
 
-      <h2>Denúncias</h2>
+    <h1 className="title">
+      Denúncias Registradas
+    </h1>
+
+    <div className="grid">
 
       {denuncias.map(d => (
 
-        <div key={d.id}>
+        <div
+          key={d.id}
+          className="denuncia-card"
+        >
 
           <h3>{d.titulo}</h3>
 
           <p>{d.descricao}</p>
 
-          <p>{d.local}</p>
+          <p>
+            <strong>Local:</strong>
+            {" "}
+            {d.local}
+          </p>
 
-          <p>{d.categoria}</p>
+          <p>
+            <strong>Categoria:</strong>
+            {" "}
+            {d.categoria}
+          </p>
 
-          <p>{d.status}</p>
+          <span className="badge">
+            {d.status}
+          </span>
 
         </div>
 
       ))}
 
     </div>
-  );
+
+  </div>
+);
 }
