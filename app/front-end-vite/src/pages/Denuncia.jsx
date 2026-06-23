@@ -49,8 +49,16 @@ export default function Denuncia() {
   <div className="card">
 
     <h1 className="title">
-      Nova Denúncia
+      Registrar Ocorrência
     </h1>
+    <p className="form-info">
+
+    Descreva a situação da forma
+    mais detalhada possível.
+    Suas informações serão tratadas
+    com responsabilidade.
+
+    </p>
 
     <input
       className="input"

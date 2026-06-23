@@ -38,6 +38,22 @@ export default function Cadastro() {
 
   <div className="card">
 
+    <div className="hero">
+
+    <h2>
+     Você não está sozinha.
+    </h2>
+
+    <p>
+    A plataforma Guerreiras Caxienses foi criada
+    para fortalecer a rede de apoio às mulheres,
+    oferecendo um espaço seguro para registrar
+    ocorrências e buscar orientação.
+
+    </p>
+
+    </div>
+
     <h1 className="title">
       Criar Conta
     </h1>

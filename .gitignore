@@ -1,1 +1,4 @@
-PastaExtra
+PastaExtra/
+nginx/
+docker-compose.yml/
+.vscode

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import api from "../services/api";
+import Sobre from "./Sobre";
 
 function sair() {
 
@@ -12,21 +13,6 @@ function sair() {
 
 export default function Login(){
   
-  <div className="hero">
-
-  <h2>
-    Sua voz importa
-  </h2>
-
-  <p>
-
-    Um espaço seguro para registrar
-    denúncias e fortalecer a rede de
-    proteção às mulheres.
-
-  </p>
-
-  </div>
 
 
   const [email,setEmail] = useState("");
@@ -64,8 +50,24 @@ export default function Login(){
 
   <div className="card">
 
+    <div className="hero">
+
+    <h2>
+     Você não está sozinha.
+    </h2>
+
+    <p>
+    A plataforma Guerreiras Caxienses foi criada
+    para fortalecer a rede de apoio às mulheres,
+    oferecendo um espaço seguro para registrar
+    ocorrências e buscar orientação.
+
+    </p>
+
+    </div>
+
     <h1 className="title">
-      Guerreiras Caxienses
+      Entrar
     </h1>
 
     <input
@@ -87,6 +89,7 @@ export default function Login(){
     >
         Entrar
       </button>
+      
 
     </div>
     
