@@ -34,14 +34,6 @@ export default function Denuncia() {
     }
   }
 
-  function sair() {
-
-  localStorage.removeItem(
-    "token"
-  );
-
-  window.location.reload();
-  }
 
 
  return (
