@@ -97,9 +97,6 @@ export default function Denuncia() {
     >
       Enviar denúncia
     </button>
-    <button className="btn-danger" onClick={sair}>
-    Sair
-    </button>
 
   </div>
 );

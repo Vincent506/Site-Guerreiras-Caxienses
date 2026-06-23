@@ -14,6 +14,11 @@ function App() {
   const token =
     localStorage.getItem("token");
 
+    function sair() {
+    localStorage.removeItem("token");
+    window.location.reload();
+    }
+
   if(token){
 
     return (
@@ -43,6 +48,10 @@ function App() {
           >
           Sobre
           </button>
+          <button className="btn-danger" onClick={sair}>
+          Sair
+          </button>
+
 
         </div>
 
