@@ -1,4 +1,5 @@
 PastaExtra
-nginx
-/docker-compose.yml/
-.vscode
+docker-compose.yml/
+app/libs
+app/node_modules
+app/front-end-vite/libs
