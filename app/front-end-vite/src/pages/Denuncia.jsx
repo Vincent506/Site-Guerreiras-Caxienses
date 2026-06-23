@@ -34,6 +34,15 @@ export default function Denuncia() {
     }
   }
 
+  function sair() {
+
+  localStorage.removeItem(
+    "token"
+  );
+
+  window.location.reload();
+  }
+
 
  return (
 
@@ -79,6 +88,9 @@ export default function Denuncia() {
       onClick={enviar}
     >
       Enviar denúncia
+    </button>
+    <button className="btn-danger" onClick={sair}>
+    Sair
     </button>
 
   </div>

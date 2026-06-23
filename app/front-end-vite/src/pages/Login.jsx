@@ -11,6 +11,23 @@ function sair() {
 }
 
 export default function Login(){
+  
+  <div className="hero">
+
+  <h2>
+    Sua voz importa
+  </h2>
+
+  <p>
+
+    Um espaço seguro para registrar
+    denúncias e fortalecer a rede de
+    proteção às mulheres.
+
+  </p>
+
+  </div>
+
 
   const [email,setEmail] = useState("");
   const [senha,setSenha] = useState("");
@@ -72,5 +89,6 @@ export default function Login(){
       </button>
 
     </div>
+    
   );
 }

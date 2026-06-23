@@ -56,8 +56,8 @@ return (
             {d.categoria}
           </p>
 
-          <span className="badge">
-            {d.status}
+          <span className={`badge badge-${d.status}`}>
+          {d.status}
           </span>
 
         </div>

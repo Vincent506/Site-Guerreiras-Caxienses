@@ -7,14 +7,27 @@ import ListaDenuncias from "./pages/listaDenuncias";
 
 function App() {
 
-  const [tela,setTela] = useState("login");
+  <header className="header">
 
+  <h1>
+    Guerreiras Caxienses
+  </h1>
+
+  <p>
+    Plataforma de apoio e denúncia
+  </p>
+
+</header>
+  
+  const [tela,setTela] = useState("login");
+  
   const token =
     localStorage.getItem("token");
 
   if(token){
 
     return (
+      
 
       <div className="container">
 
