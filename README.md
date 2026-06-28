@@ -1,4 +1,4 @@
-# Informações gerais sobr o site: Guerreiras Caxienses
+# Informações gerais sobre o site: Guerreiras Caxienses
 Sistema Web Integrado de Denúncias, Atendimento e Informação da Secretaria Municipal da Mulher de Caxias - Maranhão.
 
 # Sobre o Projeto
