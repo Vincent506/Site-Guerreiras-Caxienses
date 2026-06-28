@@ -1,52 +1,143 @@
-# Site-Guerreiras-Caxienses
-Sistema Web Integrado de Denúncias, Atendimentos e Informação da Secretaria Municipal da Mulher de Caxias Maranhão
+# Informações gerais sobr o site: Guerreiras Caxienses
+Sistema Web Integrado de Denúncias, Atendimento e Informação da Secretaria Municipal da Mulher de Caxias - Maranhão.
+
+# Sobre o Projeto
+
+O Guerreiras Caxienses é uma plataforma web desenvolvida com o objetivo de facilitar o acesso à informação, permitir o registro seguro de denúncias e aproximar mulheres em situação de vulnerabilidade dos serviços oferecidos pela Secretaria Municipal da Mulher de Caxias.
+
+A proposta do sistema é atuar como um canal digital de acolhimento, comunicação institucional e encaminhamento para atendimento especializado, contribuindo para o combate à violência contra a mulher e para a promoção dos seus direitos.
+
+O projeto foi desenvolvido como parte das atividades acadêmicas do curso de Ciência da Computação.
+
+# Contexto Social
+
+Mulheres em situação de vulnerabilidade frequentemente enfrentam dificuldades para acessar informações, denunciar casos de violência ou solicitar apoio especializado.
+
+O sistema Guerreiras Caxienses busca reduzir essas barreiras oferecendo:
+
+    Registro simplificado de denúncias;
+    
+    Acesso remoto aos serviços da Secretaria da Mulher;
+    
+    Divulgação de informações sobre direitos e proteção;
+    
+    Comunicação entre usuários e profissionais especializados;
+    
+    Ambiente digital acessível e seguro.
+
+# Funcionalidades Implementadas
 
 
-# Contexto
+### Usuários: 
 
-Um site web que pode facilitar o acesso à informação, permitir o registro seguro de denúncias, a requisição de atendimentos especializados, a comunicação institucional e o acolhimento anônimo de mulheres em situação de vulnerabilidade.
+    Cadastro de usuários;
+    
+    Login com autenticação JWT;
+    
+    Criptografia de senhas utilizando bcrypt;
+    
+    Logout da aplicação.
 
-# Serviços
+### Denúncias: 
 
-As Mulheres podem acessar por meio do navegador o nosso site e efetuam denuncias para a secretaria da mulher adicionando um endereço e um telefone.
+    Criar denúncia;
+    
+    Listar denúncias;
+    
+    Buscar denúncia por ID;
+    
+    Atualizar denúncia;
+    
+    Excluir denúncia;
+    
+    Alterar status da denúncia: 
+        Aberta;
+        Em análise;
+        Resolvida.
 
-Para efetuar a requisição de atendimentos especializados, ou a comunicação institucinal elas precisam efetuar um cadastro para criar uma conta. Esses serviços mais especificos onde precisamos ter um agendamento previo.
+### Interface
 
-Para ter acesso as noticias, avisos tambem é necessário ter uma conta e efetuar um login.
+    Tela inicial;
+    
+    Página de login;
+    
+    Página de cadastro;
+    
+    Página de denúncias;
+    
+    Página "Sobre o Projeto";
+    
+    Navegação entre páginas utilizando React Router.
 
-# C1: Diagrama de Contexto
+# Tecnologias Utilizadas
 
-![Imagem_Diagrama_C1](assetsReadme/C1%20-%20Imagem.png)
+### Front-end
 
-### Usuarios: 
-Mulheres e Profissionais Especializados(Agentes da Delegacia da mulher, Advogados, Medicos e Psicologos). Esses usuarios acessam ao site, efetuam denuncias, solicitam serviços com algum profissional, obtem informações sobre seus direitos e sobre serviços disponiveis e disponibilizam seus serviços.
+    React
+    Vite
+    React Router DOM
+    Axios
+    CSS3
 
-### Sistema Principal: 
+### Back-end
 
-O Site do Guerreiras Caxienses serve de portal de comunicação para as mulheres em situação de vulnerabilidade para os sistemas finais(Externos).
+    Node.js
+    Express
+    Sequelize ORM
+    JWT (JSON Web Token)
+    bcryptjs
 
-### Sistemas Externos: 
-Delegacia da Mulher e Corpo de Profissionais especializados
+### Banco de Dados
 
-# C2: Diagrama de Conteiners
+    PostgreSQL
 
-![Imagem_Diagrama_C2](assetsReadme/C2%20-%20Imagem.png)
+### Infraestrutura
 
-### Aplicação Web
-
-Front-End: React.js 
-
-Porque o projeto exige dinamismo (agendar serviços, carregar informações). O React permite que a página atualize apenas as partes necessárias sem recarregar tudo, melhorando a experiência de quem está em uma conexão móvel lenta, o que pode ser o caso das usuárias em vulnerabilidade.
-
-Back-End: Python com FastAPI
-
-Porque o FastAPI é extremamente rápido e lida muito bem com processos assíncronos, essenciais para comunicações com APIs externas.Ele utiliza "Type Hinting" (indicação de tipos) o que ajuda muito a evitar erros bobos de lógica. Ele também gera automaticamente uma documentação (Swagger) onde você podemos testar nossas rotas sem precisar criar o front-end primeiro.
-
-Banco de Dados: PostgreSQL
-
-Para armazenar os perfis, os agendamentos e as denúncias, utilizaremos um banco de dados. Uma Mulher faz um Agendamento com um Profissional. Essa relação (Foreign Keys) é muito melhor gerenciada em um banco relacional do que em bancos não-relacionais (NoSQL).
-
-### Comunicação com Sistemas Externos (APIs)
+    Docker
+    Docker Compose
 
 
-Tecnologia: Biblioteca HTTPX ou Requests (dentro do Python/FastAPI).O Back-end funcionará como um "cliente" que envia requisições (geralmente em formato JSON) para as URLs dos sistemas externos. Para enviar a denúncia para a delegacia, nos fará uma requisição POST para a API deles. Para solicitar serviços profissionais, nos consumiremos a API de agendamento desses órgãos. Se esses sistemas não tiverem uma API real ainda, nos podemos "simular" esse comportamento criando pequenos serviços mockados (falsos) para testar nossos fluxo.
+# Arquitetura do Sistema
+
+    Front-end (React + Vite)
+
+    Back-end (Node + Express)
+
+    PostgreSQL    
+
+A comunicação entre frontend e backend é realizada através de requisições HTTP utilizando Axios.
+
+O acesso às rotas protegidas é realizado através de autenticação JWT.
+
+
+# Estrutura do Projeto
+
+
+```
+WebServer/ 
+│ ├── app/ 
+│ ├── backend/ 
+│ ├── src/ 
+│ │     ├── controllers/ 
+│ │     ├── middleware/ 
+│ │     ├── models/ 
+│ │     ├── routes/ 
+│ │     ├── conf/ 
+│ │     └── app.js 
+│ ├── config.env 
+│ ├── package.json 
+│ └── server.js 
+| |
+│ ├── front-end-vite/ 
+│ ├── src/ 
+│ │ ├── pages/ 
+│ │ ├── services/ 
+│ │ ├── styles/
+│ │ └── assets/ 
+│ │
+│ ├── package.json
+│ └── vite.config.js
+│ 
+└── docker-compose.yml
+```
+
