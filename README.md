@@ -15,13 +15,13 @@ Mulheres em situação de vulnerabilidade frequentemente enfrentam dificuldades 
 
 O sistema Guerreiras Caxienses busca reduzir essas barreiras oferecendo:
 
-    Registro simplificado de denúncias;
+* Registro simplificado de denúncias;
     
-    Acesso remoto aos serviços da Secretaria da Mulher;
+* Acesso remoto aos serviços da Secretaria da Mulher;
     
-    Divulgação de informações sobre direitos e proteção;
+* Divulgação de informações sobre direitos e proteção;
     
-    Comunicação entre usuários e profissionais especializados;
+* Comunicação entre usuários e profissionais especializados;
     
     Ambiente digital acessível e seguro.
 
@@ -30,79 +30,79 @@ O sistema Guerreiras Caxienses busca reduzir essas barreiras oferecendo:
 
 ### Usuários: 
 
-    Cadastro de usuários;
+* Cadastro de usuários;
     
-    Login com autenticação JWT;
+* Login com autenticação JWT;
     
-    Criptografia de senhas utilizando bcrypt;
+* Criptografia de senhas utilizando bcrypt;
     
-    Logout da aplicação.
+* Logout da aplicação.
 
 ### Denúncias: 
 
-    Criar denúncia;
+* Criar denúncia;
     
-    Listar denúncias;
+* Listar denúncias;
     
-    Buscar denúncia por ID;
+* Buscar denúncia por ID;
     
-    Atualizar denúncia;
+* Atualizar denúncia;
     
-    Excluir denúncia;
+* Excluir denúncia;
     
-    Alterar status da denúncia: 
-        Aberta;
-        Em análise;
-        Resolvida.
+* Alterar status da denúncia: 
+    + Aberta;
+    + Em análise;
+    + Resolvida.
 
 ### Interface
 
-    Tela inicial;
+* Tela inicial;
     
-    Página de login;
+* Página de login;
     
-    Página de cadastro;
+* Página de cadastro;
     
-    Página de denúncias;
+* Página de denúncias;
     
-    Página "Sobre o Projeto";
+* Página "Sobre o Projeto";
     
-    Navegação entre páginas utilizando React Router.
+* Navegação entre páginas utilizando React Router.
 
 # Tecnologias Utilizadas
 
 ### Front-end
 
-    React
-    Vite
-    React Router DOM
-    Axios
-    CSS3
+* React
+* Vite
+* React Router DOM
+* Axios
+* CSS3
 
 ### Back-end
 
-    Node.js
-    Express
-    Sequelize ORM
-    JWT (JSON Web Token)
-    bcryptjs
+* Node.js
+* Express
+* Sequelize ORM
+* JWT (JSON Web Token)
+* bcryptjs
 
 ### Banco de Dados
 
-    PostgreSQL
+* PostgreSQL
 
 ### Infraestrutura
 
-    Docker
-    Docker Compose
+* Docker
+* Docker Compose
 
 
 # Arquitetura do Sistema
 
     Front-end (React + Vite)
-
+        ↓
     Back-end (Node + Express)
-
+        ↓
     PostgreSQL    
 
 A comunicação entre frontend e backend é realizada através de requisições HTTP utilizando Axios.
@@ -141,3 +141,149 @@ WebServer/
 └── docker-compose.yml
 ```
 
+# Configuração do Ambiente
+
+### Back-end
+
+Instalar dependências:
+
+    cd app/backend
+    npm install
+
+Executar o servidor:
+
+    node server.js
+
+Servidor disponível em:
+
+    http://localhost:3000
+
+### Front-end
+
+Instalar dependências:
+
+    cd app/front-end-vite
+    npm install
+
+Executar aplicação:
+
+    npm run dev
+
+Front-end disponível em:
+
+    http://localhost:5173
+
+Observação: por questões de segurança do projeto eu não vou disponibilizar as variaveis de ambientes para quem não for colaborador oficial do projeto
+
+# Execução com o Docker
+
+Construir os containers:
+
+    docker compose up --build
+
+Executar em segundo plano:
+
+    docker compose up -d
+
+Parar os containers:
+
+    docker compose down
+
+# Endpoints da API
+
+### Autenticação 
+#### Cadastro
+    POST /auth/register
+
+Exemplo: 
+
+    {
+        "nome": "Maria",
+        "email": "maria@email.com",
+        "senha": "123456"
+    }
+
+#### Login
+
+    POST /auth/login
+
+Exemplo:
+
+    {
+        "email": "maria@email.com",
+        "senha": "123456"
+    }
+
+Resposta: 
+
+    {
+        "token": "jwt-token"
+    }
+
+### Denúncias
+
+#### Criar denúncia
+
+    POST /denuncias
+
+#### Listar denúncias
+
+    GET /denuncias
+
+#### Buscar denúncia por ID
+
+    GET /denuncias/:id
+
+#### Atualizar denúncia
+    
+    PUT /denuncias/:id
+
+#### Excluir denúncia
+    
+    DELETE /denuncias/:id
+
+### Segurança
+
+* Senhas armazenadas utilizando bcrypt;
+
+* Autenticação baseada em JWT;
+
+* Rotas protegidas por middleware;
+
+* Variáveis sensíveis isoladas em arquivo de configuração;
+
+* Suporte à execução em containers Docker.
+
+### Próximas Funcionalidades
+
+* Upload de imagens e documentos;
+
+* Recuperação de senha;
+
+* Painel administrativo;
+
+* Dashboard estatístico;
+
+* Agendamento de atendimento especializado;
+
+* Integração com profissionais parceiros;
+
+* Sistema de notificações;
+
+* Mapa de serviços de apoio à mulher.
+
+### Público Alvo
+
+* Mulheres em situação de vulnerabilidade;
+
+* Secretaria Municipal da Mulher;
+
+* Delegacia Especializada da Mulher;
+
+* Advogados;
+
+* Psicólogos;
+
+* Assistentes sociais;
+
+* Profissionais parceiros da rede de apoio.
