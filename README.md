@@ -287,3 +287,19 @@ Resposta:
 * Assistentes sociais;
 
 * Profissionais parceiros da rede de apoio.
+
+
+# Autores
+
+* André Silva Leite
+* Cauby Manoel Mendes Neto
+* João Otávio Silva Oliveira
+* Vicente Gomes de Sousa Neto
+
+Curso de Ciência da Computação
+
+Instituto Federal do Maranhão - Campus Caxias
+
+# Licença
+
+Projeto desenvolvido exclusivamente para fins acadêmicos e educacionais.
